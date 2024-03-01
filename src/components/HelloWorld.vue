@@ -1,10 +1,19 @@
 <template>
+  <div class="container">
+
   <div class="d-inline-flex p-2">
+    
     <div class="cell-line">
-      <div class="cell" v-for="a in code" @click="changeData(a)">{{a.value}}</div>
+      <div v-for="a in code">
+        <div class="name-cell">a<sub>{{ a.id }}</sub></div>
+        <div class="cell" @click="changeData(a)">{{a.value}}</div>
+      </div>
     </div>
     <button @click="logo">Пуск</button>
   </div>
+
+</div>
+
 </template>
 
 <script>
@@ -31,7 +40,11 @@ export default {
         this.code[a.id].value = 0
     },
     logo()
-    {console.log(this.code)}
+    {console.log(this.code)},
+    getColor(id){
+      if (id == 0|| id == 1 || id == 3 || id == 9)
+        return 'background-color: greenyellow;'
+    }
   }
 }
 </script>
@@ -43,6 +56,10 @@ export default {
   display: flex;
 
 }
+
+.name-cell
+{text-align: center;}
+
 .cell-line .cell
 {
   border: solid 2px black;
@@ -51,4 +68,5 @@ export default {
   text-align: center;
   cursor: pointer;
 }
+
 </style>
