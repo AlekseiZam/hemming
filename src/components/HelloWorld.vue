@@ -37,18 +37,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.cell-line
-{
-  display: flex;
 
-}
-.cell-line .cell
-{
-  border: solid 2px black;
-  width: 40px;
-  margin-right: -2px;
-  text-align: center;
-  cursor: pointer;
-}
-</style>
