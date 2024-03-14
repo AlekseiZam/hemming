@@ -137,7 +137,11 @@
             <div class="left-line col-7">
               <div class="col-7 title-cell-info" v-for="b in code_hem">{{b.title}}</div>
               <br>
+<<<<<<< HEAD
+              <div class="col-7 cell" v-for="b in code_hem" v-bind:style="changeColor(b.id),  changeColorRes(b.id)" style="cursor: default">{{b.value}}</div>
+=======
               <div class="col-7 cell" v-for="b in code_hem" v-bind:style="changeColor(b.id)" style="cursor: default">{{b.value}}</div>
+>>>>>>> refs/remotes/origin/main
               <br>
               <div class="col-7 title-cell" v-for="b in code_hem">b<sub>{{b.id+1}}</sub></div>
             </div>
@@ -289,6 +293,16 @@ export default {
     {
       this.code_flag = false
       this.end_flag = true
+
+    },
+
+    changeColorRes(i)
+    {
+      if (i == ((this.enter_code[0].value ^ this.enter_code[2].value ^ this.enter_code[4].value ^ this.enter_code[6].value ^ this.enter_code[8].value ^ this.enter_code[10].value
+          + (this.enter_code[1].value ^ this.enter_code[2].value ^ this.enter_code[5].value ^ this.enter_code[6].value ^ this.enter_code[9].value ^ this.enter_code[10].value) * 2
+          + (this.enter_code[3].value ^ this.enter_code[4].value ^ this.enter_code[5].value ^ this.enter_code[6].value ^ this.enter_code[11].value) * 4
+          + (this.enter_code[7].value ^ this.enter_code[8].value ^ this.enter_code[9].value ^ this.enter_code[10].value ^ this.enter_code[11].value) * 8) - 1))
+        return "background: SpringGreen"
 
     }
 
