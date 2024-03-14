@@ -88,37 +88,42 @@
             </div>
             <div class="right-line col-5">
               <div class="text">
-                s1 = b{{ enter_code[0].id + 1 }} ⊕ b{{ enter_code[2].id + 1 }} ⊕
-                b{{ enter_code[4].id + 1 }} ⊕ b{{ enter_code[6].id + 1 }} ⊕  b{{ enter_code[8].id + 1 }} ⊕ b{{ enter_code[10].id + 1 }} =
-                {{ enter_code[0].value }} ⊕ {{ enter_code[2].value }} ⊕ {{ enter_code[4].value }} ⊕ {{ enter_code[6].value }} ⊕ {{ enter_code[8].value }} ⊕
-                {{ enter_code[10].value }} =
-                {{ enter_code[0].value ^ enter_code[2].value ^ enter_code[4].value ^ enter_code[6].value ^ enter_code[8].value ^ enter_code[10].value }}
-                <br>
-                s2 = b{{ enter_code[1].id + 1 }} ⊕ b{{ enter_code[2].id + 1 }} ⊕
-                b{{ enter_code[5].id + 1 }} ⊕ b{{ enter_code[6].id + 1 }} ⊕ b{{ enter_code[9].id + 1 }} ⊕ b{{ enter_code[10].id + 1 }} =
-                {{ enter_code[1].value }} ⊕ {{ enter_code[2].value }} ⊕
-                {{ enter_code[5].value }} ⊕ {{ enter_code[6].value }} ⊕ {{ enter_code[9].value }} ⊕ {{ enter_code[10].value }} =
-                {{ enter_code[1].value ^ enter_code[2].value ^ enter_code[5].value ^ enter_code[6].value ^ enter_code[9].value ^ enter_code[10].value }}
-                <br>
-                s3 = b{{ enter_code[3].id + 1 }} ⊕ b{{ enter_code[4].id + 1 }} ⊕
-                b{{ enter_code[5].id + 1 }} ⊕ b{{ enter_code[6].id + 1 }} ⊕ b{{ enter_code[11].id + 1 }} =
-                {{ enter_code[3].value }} ⊕ {{ enter_code[4].value }} ⊕
-                {{ enter_code[5].value }} ⊕ {{ enter_code[6].value }} ⊕ {{ enter_code[11].value }} =
-                {{ enter_code[3].value ^ enter_code[4].value ^ enter_code[5].value ^ enter_code[6].value ^ enter_code[11].value }}
-                <br>
-                s4 = b{{ enter_code[7].id + 1 }} ⊕ b{{ enter_code[8].id + 1 }} ⊕
+                <h6>Результаты умножения сообщения на входе на столбцы кодирующей матрицы:</h6>
+                S<sub>4</sub> = b{{ enter_code[7].id + 1 }} ⊕ b{{ enter_code[8].id + 1 }} ⊕
                 b{{ enter_code[9].id + 1 }} ⊕ b{{ enter_code[10].id + 1 }} ⊕ b{{ enter_code[11].id + 1 }} =
                 {{ enter_code[7].value }} ⊕ {{ enter_code[8].value }} ⊕
                 {{ enter_code[9].value }} ⊕ {{ enter_code[10].value }} ⊕ {{ enter_code[11].value }} =
                 {{ enter_code[7].value ^ enter_code[8].value ^ enter_code[9].value ^ enter_code[10].value ^ enter_code[11].value }}
                 <br>
+                S<sub>3</sub> = b{{ enter_code[3].id + 1 }} ⊕ b{{ enter_code[4].id + 1 }} ⊕
+                b{{ enter_code[5].id + 1 }} ⊕ b{{ enter_code[6].id + 1 }} ⊕ b{{ enter_code[11].id + 1 }} =
+                {{ enter_code[3].value }} ⊕ {{ enter_code[4].value }} ⊕
+                {{ enter_code[5].value }} ⊕ {{ enter_code[6].value }} ⊕ {{ enter_code[11].value }} =
+                {{ enter_code[3].value ^ enter_code[4].value ^ enter_code[5].value ^ enter_code[6].value ^ enter_code[11].value }}
+                <br>
+                S<sub>2</sub> = b{{ enter_code[1].id + 1 }} ⊕ b{{ enter_code[2].id + 1 }} ⊕
+                b{{ enter_code[5].id + 1 }} ⊕ b{{ enter_code[6].id + 1 }} ⊕ b{{ enter_code[9].id + 1 }} ⊕ b{{ enter_code[10].id + 1 }} =
+                {{ enter_code[1].value }} ⊕ {{ enter_code[2].value }} ⊕
+                {{ enter_code[5].value }} ⊕ {{ enter_code[6].value }} ⊕ {{ enter_code[9].value }} ⊕ {{ enter_code[10].value }} =
+                {{ enter_code[1].value ^ enter_code[2].value ^ enter_code[5].value ^ enter_code[6].value ^ enter_code[9].value ^ enter_code[10].value }}
+                <br>
+                S<sub>1</sub> = b{{ enter_code[0].id + 1 }} ⊕ b{{ enter_code[2].id + 1 }} ⊕
+                b{{ enter_code[4].id + 1 }} ⊕ b{{ enter_code[6].id + 1 }} ⊕  b{{ enter_code[8].id + 1 }} ⊕ b{{ enter_code[10].id + 1 }} =
+                {{ enter_code[0].value }} ⊕ {{ enter_code[2].value }} ⊕ {{ enter_code[4].value }} ⊕ {{ enter_code[6].value }} ⊕ {{ enter_code[8].value }} ⊕
+                {{ enter_code[10].value }} =
+                {{ enter_code[0].value ^ enter_code[2].value ^ enter_code[4].value ^ enter_code[6].value ^ enter_code[8].value ^ enter_code[10].value }}
+                <br>
+                S<sub>4</sub>S<sub>3</sub>S<sub>2</sub>S<sub>1</sub> =  {{ enter_code[7].value ^ enter_code[8].value ^ enter_code[9].value ^ enter_code[10].value ^ enter_code[11].value }}
+                {{ enter_code[3].value ^ enter_code[4].value ^ enter_code[5].value ^ enter_code[6].value ^ enter_code[11].value }}
+                {{ enter_code[1].value ^ enter_code[2].value ^ enter_code[5].value ^ enter_code[6].value ^ enter_code[9].value ^ enter_code[10].value }}
+                {{ enter_code[0].value ^ enter_code[2].value ^ enter_code[4].value ^ enter_code[6].value ^ enter_code[8].value ^ enter_code[10].value }}<sub>2</sub>
                 <div v-if="!no_err_flag">
                   Ошибка в {{enter_code[0].value ^ enter_code[2].value ^ enter_code[4].value ^ enter_code[6].value ^ enter_code[8].value ^ enter_code[10].value
                   + (enter_code[1].value ^ enter_code[2].value ^ enter_code[5].value ^ enter_code[6].value ^ enter_code[9].value ^ enter_code[10].value) * 2
                   + (enter_code[3].value ^ enter_code[4].value ^ enter_code[5].value ^ enter_code[6].value ^ enter_code[11].value) * 4
                   + (enter_code[7].value ^ enter_code[8].value ^ enter_code[9].value ^ enter_code[10].value ^ enter_code[11].value) * 8}} позициии
                   <br>
-                  <button v-if="!no_err_flag" class="btn btn-primary mt-1 col-8" style="margin-left: 5px" @click="end">Найти и исправить ошибку</button>
+                  <button v-if="!no_err_flag" class="btn btn-primary mt-1 col-8" style="margin-left: 5px" @click="end">Исправить ошибку</button>
                 </div>
                  <div v-if="no_err_flag">
                    Ошибки нет
@@ -133,11 +138,11 @@
 
         <div v-if="end_flag" class="col-12 mb-2 mt-4 info">
           <div class="col-12 cell-line">
-            <div class="title mb-1 p-2">Исправленное сообщение на входе приемника</div>
+            <div class="title mb-1 p-2">Исправленный код</div>
             <div class="left-line col-7">
               <div class="col-7 title-cell-info" v-for="b in code_hem">{{b.title}}</div>
               <br>
-              <div class="col-7 cell" v-for="b in code_hem" v-bind:style="changeColor(b.id)" style="cursor: default">{{b.value}}</div>
+              <div class="col-7 cell" v-for="b in code_hem" v-bind:style="changeColor(b.id), changeColorRes(b.id)" style="cursor: default">{{b.value}}</div>
               <br>
               <div class="col-7 title-cell" v-for="b in code_hem">b<sub>{{b.id+1}}</sub></div>
             </div>
@@ -227,6 +232,8 @@ export default {
     {
       this.code_flag = false
       this.err_flag = false
+      this.end_flag = false
+      this.not_err()
       let k = 0
       for (const i in this.code_hem){
         if (((this.code_hem[i].id + 1) & this.code_hem[i].id) != 0)
@@ -289,8 +296,18 @@ export default {
     {
       this.code_flag = false
       this.end_flag = true
+    },
+
+    changeColorRes(i)
+    {
+      if (i == ((this.enter_code[0].value ^ this.enter_code[2].value ^ this.enter_code[4].value ^ this.enter_code[6].value ^ this.enter_code[8].value ^ this.enter_code[10].value
+          + (this.enter_code[1].value ^ this.enter_code[2].value ^ this.enter_code[5].value ^ this.enter_code[6].value ^ this.enter_code[9].value ^ this.enter_code[10].value) * 2
+          + (this.enter_code[3].value ^ this.enter_code[4].value ^ this.enter_code[5].value ^ this.enter_code[6].value ^ this.enter_code[11].value) * 4
+          + (this.enter_code[7].value ^ this.enter_code[8].value ^ this.enter_code[9].value ^ this.enter_code[10].value ^ this.enter_code[11].value) * 8) - 1))
+        return "background: SpringGreen"
 
     }
+
 
   }
 }
